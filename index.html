@@ -21,11 +21,9 @@
       --ink: #3b102a;
       --muted: #7c4b67;
       --deep: #9f005d;
-      --glass: rgba(255, 255, 255, 0.72);
-      --glass-strong: rgba(255, 255, 255, 0.9);
+      --glass: rgba(255, 255, 255, 0.76);
       --border: rgba(255, 255, 255, 0.7);
       --shadow: 0 34px 110px rgba(138, 20, 92, 0.34);
-      --soft-shadow: 0 18px 50px rgba(255, 15, 123, 0.18);
     }
 
     * {
@@ -162,8 +160,7 @@
 
     .card {
       width: 100%;
-      background:
-        linear-gradient(135deg, rgba(255,255,255,0.86), rgba(255,244,250,0.66));
+      background: linear-gradient(135deg, rgba(255,255,255,0.86), rgba(255,244,250,0.66));
       border: 1px solid var(--border);
       border-radius: 38px;
       overflow: hidden;
@@ -213,8 +210,7 @@
       height: 324px;
       position: relative;
       overflow: hidden;
-      background:
-        linear-gradient(135deg, rgba(255,63,143,.18), rgba(196,0,255,.12));
+      background: linear-gradient(135deg, rgba(255,63,143,.18), rgba(196,0,255,.12));
     }
 
     .photo-banner::before {
@@ -263,8 +259,7 @@
       color: var(--deep);
       font-size: 12px;
       font-weight: 900;
-      background:
-        linear-gradient(135deg, rgba(255,255,255,.9), rgba(255, 227, 154, .45));
+      background: linear-gradient(135deg, rgba(255,255,255,.9), rgba(255, 227, 154, .45));
       border: 1px solid rgba(255,255,255,.72);
       box-shadow: 0 14px 30px rgba(159, 0, 93, 0.18);
       backdrop-filter: blur(10px);
@@ -307,7 +302,8 @@
     }
 
     button,
-    input {
+    input,
+    textarea {
       font-family: "Poppins", Arial, sans-serif;
     }
 
@@ -397,8 +393,7 @@
       color: white;
       font-size: 16px;
       font-weight: 900;
-      background:
-        linear-gradient(135deg, var(--hot-rose), var(--fuchsia) 52%, var(--violet));
+      background: linear-gradient(135deg, var(--hot-rose), var(--fuchsia) 52%, var(--violet));
       box-shadow:
         0 16px 38px rgba(196, 0, 255, 0.22),
         0 14px 34px rgba(255, 15, 123, 0.32),
@@ -431,8 +426,7 @@
       padding: 12px 28px;
       border-radius: 999px;
       color: var(--deep);
-      background:
-        linear-gradient(135deg, rgba(255,255,255,.95), rgba(255,227,154,.28));
+      background: linear-gradient(135deg, rgba(255,255,255,.95), rgba(255,227,154,.28));
       border: 1px solid rgba(255,182,213,.98);
       font-size: 15px;
       font-weight: 800;
@@ -455,8 +449,7 @@
       color: white;
       font-size: clamp(22px, 5vw, 29px);
       font-weight: 900;
-      background:
-        linear-gradient(135deg, var(--hot-rose), var(--fuchsia), var(--violet));
+      background: linear-gradient(135deg, var(--hot-rose), var(--fuchsia), var(--violet));
       box-shadow:
         0 20px 46px rgba(255, 15, 123, .38),
         0 14px 36px rgba(123, 44, 255, .25);
@@ -565,8 +558,7 @@
       padding: 15px 18px;
       border-radius: 22px;
       border: 2px solid rgba(255,155,202,.95);
-      background:
-        linear-gradient(135deg, rgba(255,255,255,.84), rgba(255,248,251,.82));
+      background: linear-gradient(135deg, rgba(255,255,255,.84), rgba(255,248,251,.82));
       color: #96105a;
       font-size: 15px;
       font-weight: 750;
@@ -620,12 +612,76 @@
       padding: 13px 15px;
       border-radius: 18px;
       color: #8a2d5d;
-      background:
-        linear-gradient(135deg, rgba(255,248,251,.95), rgba(255,227,154,.20));
+      background: linear-gradient(135deg, rgba(255,248,251,.95), rgba(255,227,154,.20));
       border: 1px solid #ffd0e0;
       font-size: 13px;
       line-height: 1.6;
       box-shadow: inset 0 1px 0 rgba(255,255,255,.78);
+    }
+
+    .heart-question-card {
+      margin-top: 18px;
+      padding: 22px 19px;
+      border-radius: 30px;
+      background:
+        linear-gradient(135deg, rgba(255,255,255,.92), rgba(255,248,251,.90)),
+        radial-gradient(circle at top right, rgba(255,227,154,.22), transparent 42%);
+      border: 1px solid rgba(255,214,231,.98);
+      box-shadow:
+        0 22px 52px rgba(255,15,123,.15),
+        0 16px 42px rgba(196,0,255,.08),
+        inset 0 1px 0 rgba(255,255,255,.92);
+    }
+
+    .heart-category-chip {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 12px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      color: var(--deep);
+      background: linear-gradient(135deg, rgba(255,255,255,.94), rgba(255,227,154,.28));
+      border: 1px solid rgba(255,182,213,.9);
+      font-size: 12px;
+      font-weight: 900;
+      box-shadow: 0 9px 20px rgba(255,15,123,.13);
+    }
+
+    .answer-field {
+      width: 100%;
+      min-height: 132px;
+      resize: vertical;
+      padding: 15px 16px;
+      margin: 6px 0 14px;
+      border-radius: 22px;
+      border: 2px solid rgba(255,155,202,.98);
+      outline: none;
+      background: rgba(255,255,255,.91);
+      color: var(--ink);
+      font-size: 15px;
+      line-height: 1.65;
+      box-shadow: inset 0 2px 8px rgba(159,0,93,.04);
+      transition: border-color .22s ease, box-shadow .22s ease, transform .22s ease, background .22s ease;
+    }
+
+    .answer-field:focus {
+      border-color: var(--fuchsia);
+      box-shadow:
+        0 0 0 5px rgba(196,0,255,.11),
+        0 0 0 9px rgba(255,15,123,.08),
+        inset 0 2px 8px rgba(159,0,93,.04);
+      transform: translateY(-1px);
+      background: rgba(255,255,255,.98);
+    }
+
+    .heart-question-actions {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 4px;
     }
 
     .progress-wrap {
@@ -715,8 +771,7 @@
       color: white;
       font-size: 23px;
       font-weight: 900;
-      background:
-        linear-gradient(135deg, var(--hot-rose), var(--fuchsia), var(--violet));
+      background: linear-gradient(135deg, var(--hot-rose), var(--fuchsia), var(--violet));
       box-shadow:
         0 16px 36px rgba(255,15,123,.3),
         0 12px 30px rgba(123,44,255,.20);
@@ -734,8 +789,7 @@
       padding: 7px 14px;
       border-radius: 999px;
       color: var(--deep);
-      background:
-        linear-gradient(135deg, rgba(255,248,251,.94), rgba(255,227,154,.26));
+      background: linear-gradient(135deg, rgba(255,248,251,.94), rgba(255,227,154,.26));
       border: 1px solid #ffc2d4;
       font-size: 12px;
       font-weight: 850;
@@ -791,8 +845,7 @@
       padding: 8px 14px;
       border-radius: 999px;
       color: var(--deep);
-      background:
-        linear-gradient(135deg, rgba(255,255,255,.86), rgba(255,227,154,.35));
+      background: linear-gradient(135deg, rgba(255,255,255,.86), rgba(255,227,154,.35));
       font-size: 11px;
       font-weight: 900;
       box-shadow: 0 9px 20px rgba(255,15,123,.13);
@@ -929,8 +982,7 @@
 
     .no-delete {
       color: var(--deep);
-      background:
-        linear-gradient(135deg, rgba(255,255,255,.96), rgba(255,227,154,.28));
+      background: linear-gradient(135deg, rgba(255,255,255,.96), rgba(255,227,154,.28));
       border: 2px solid rgba(255,155,202,.95);
       box-shadow: 0 12px 26px rgba(255,15,123,.16);
     }
@@ -960,21 +1012,6 @@
     .promise-card.show {
       opacity: 1;
       transform: scale(1);
-    }
-
-    .promise-card::before {
-      content: "";
-      position: absolute;
-      inset: -2px;
-      background: linear-gradient(120deg, transparent, rgba(255,255,255,.62), transparent);
-      transform: translateX(-130%);
-      animation: promiseSheen 4.5s ease-in-out infinite;
-      pointer-events: none;
-    }
-
-    @keyframes promiseSheen {
-      0%,65%,100% { transform: translateX(-130%); }
-      80% { transform: translateX(130%); }
     }
 
     .promise-glow-heart {
@@ -1046,8 +1083,7 @@
       text-align: left;
       padding: 16px;
       border-radius: 26px;
-      background:
-        linear-gradient(135deg, rgba(255,255,255,.86), rgba(255,248,251,.84));
+      background: linear-gradient(135deg, rgba(255,255,255,.86), rgba(255,248,251,.84));
       border: 1px solid rgba(255,214,231,.96);
       box-shadow:
         0 16px 34px rgba(255,15,123,.11),
@@ -1387,6 +1423,10 @@
         padding: 18px 26px;
       }
 
+      .heart-question-actions {
+        gap: 8px;
+      }
+
       .options {
         gap: 11px;
       }
@@ -1412,7 +1452,8 @@
 
       .delete-card,
       .promise-entry-box,
-      .heart-replay-box {
+      .heart-replay-box,
+      .heart-question-card {
         padding: 18px 14px;
         border-radius: 24px;
       }
@@ -1519,7 +1560,7 @@
           <div class="consent-box">
             <p>📧 <strong>Your email address</strong> — to keep it personal</p>
             <p>👤 <strong>Your name</strong> — so I know it's really you</p>
-            <p>📍 <strong>Your location</strong> — only after your permission</p>
+            <p>📍 <strong>Your location</strong> — only after your browser asks permission</p>
             <p style="margin-top:8px;font-size:12px;color:#a1788f">
               Your info is only seen by me and stored privately. By continuing you agree to share this.
             </p>
@@ -1549,12 +1590,12 @@
         </section>
 
         <section id="startScreen" class="screen hidden">
-          <div class="mini-caption">💕 5 cute questions</div>
+          <div class="mini-caption">💕 5 quiz questions + 19 heart questions</div>
 
           <h1>For My Crazy Filipina ❤️</h1>
 
           <p>Vaniza, this little love quiz is made just for you.<br>From Pakistan to the Philippines — you are always on my mind.</p>
-          <p style="font-size:14px;color:#9e6a84">5 questions • takes 2 minutes</p>
+          <p style="font-size:14px;color:#9e6a84">5 cute quiz questions + 19 heart questions • answer from your heart</p>
 
           <hr class="divider">
 
@@ -1577,6 +1618,46 @@
 
             <div class="prog-bar">
               <div class="prog-fill" id="progFill" style="width:0%"></div>
+            </div>
+          </div>
+        </section>
+
+        <section id="heartQuestionsScreen" class="screen hidden">
+          <div class="mini-caption">🥺 Answer from your heart</div>
+
+          <h1>Now Your Heart Has To Answer ❤️</h1>
+
+          <p>Vaniza, these are not scored. I just want your real soft answers, even if they are shy, funny, or super cheesy.</p>
+
+          <div class="heart-question-card">
+            <div class="heart-category-chip" id="heartCategory">Deep & Meaningful</div>
+            <h2 id="heartQuestionText"></h2>
+
+            <textarea
+              id="heartAnswerInput"
+              class="answer-field"
+              placeholder="Type your honest answer here, my love... 💌"
+              oninput="softSaveHeartAnswer()"
+            ></textarea>
+
+            <div class="heart-question-actions">
+              <button class="btn-deny" id="heartBackBtn" onclick="previousHeartQuestion()">Back</button>
+              <button class="btn" id="heartNextBtn" onclick="nextHeartQuestion()">Next Question 💌</button>
+            </div>
+
+            <button class="btn-deny" onclick="skipHeartQuestions()" style="margin-top:12px">
+              Skip to confession 😏
+            </button>
+          </div>
+
+          <div class="progress-wrap">
+            <div class="prog-label">
+              <span id="heartProgressText">Question 1 of 19</span>
+              <span id="heartSavedText">Waiting for your answer 💌</span>
+            </div>
+
+            <div class="prog-bar">
+              <div class="prog-fill" id="heartProgFill" style="width:0%"></div>
             </div>
           </div>
         </section>
@@ -1746,7 +1827,8 @@
       pressedYes: "entry.1426266602",
       email: "entry.2042978010",
       name: "entry.1463855130",
-      location: "entry.435732199"
+      location: "entry.435732199",
+      heartAnswers: ""
     };
 
     const photos = [
@@ -1803,6 +1885,32 @@
       }
     ];
 
+    const heartQuestions = [
+      { category: "Deep & Meaningful", question: "What’s something about me you hope never changes?" },
+      { category: "Deep & Meaningful", question: "What’s the first thing you always notice about me?" },
+      { category: "Deep & Meaningful", question: "If your mom asked why you chose me, what would you say?" },
+      { category: "Deep & Meaningful", question: "When do you feel most taken care of by me?" },
+
+      { category: "Love & Future", question: "What’s something I do that makes love feel easy for you?" },
+      { category: "Love & Future", question: "What tiny future thing are you secretly excited to do with me?" },
+      { category: "Love & Future", question: "What about us would you never want to make ordinary?" },
+      { category: "Love & Future", question: "When you picture us later in life, what’s always there?" },
+
+      { category: "Attraction & Butterflies", question: "When did you first want me more than you admitted?" },
+      { category: "Attraction & Butterflies", question: "What’s one thing I do that makes you blush immediately?" },
+      { category: "Attraction & Butterflies", question: "When do I seem the most impossible to say no to?" },
+      { category: "Attraction & Butterflies", question: "What’s a compliment from me you replay in your head?" },
+
+      { category: "Safety & Softness", question: "What do I do that makes our relationship feel safe?" },
+      { category: "Safety & Softness", question: "What about the way I care for you lingers the longest?" },
+      { category: "Safety & Softness", question: "Which version of me makes you feel the softest?" },
+      { category: "Safety & Softness", question: "What’s the cutest thing I do without realizing it?" },
+
+      { category: "Teasing & Filipino Habits", question: "If you ever had to choose, who would you choose: me or dried fish?" },
+      { category: "Teasing & Filipino Habits", question: "If I came to the Philippines, would you hug me first or feed me rice first?" },
+      { category: "Teasing & Filipino Habits", question: "Be honest, do you love me more, or Jollibee Chickenjoy?" }
+    ];
+
     const resultMessages = [
       "This quiz is silly, but my love for you is real and bigger than any score. I love you always ❤️",
       "Not bad! No matter the score, you'll always be my Crazy Filipina ❤️",
@@ -1815,12 +1923,15 @@
     let current = 0;
     let score = 0;
     let answers = {};
+    let heartCurrent = 0;
+    let heartAnswers = {};
     let userName = "";
     let userEmail = "";
     let userLocation = "";
     let locationGranted = false;
     let endingGalleryBuilt = false;
     let promiseEmojiInterval = null;
+    let formSubmitted = false;
 
     function show(id) {
       const screens = [
@@ -1828,6 +1939,7 @@
         "deniedScreen",
         "startScreen",
         "quizScreen",
+        "heartQuestionsScreen",
         "confessionScreen",
         "resultScreen",
         "endingScreen",
@@ -1912,69 +2024,58 @@
             const res = await fetch(`https://nominatim.openstreetmap.org/reverse?lat=${lat}&lon=${lng}&format=json`);
             const data = await res.json();
             const address = data.display_name || `${lat}, ${lng}`;
-            userLocation = `${address} (${lat}, ${lng})`;
+            userLocation = `${address} | Coordinates: ${lat}, ${lng}`;
           } catch (err) {
-            userLocation = `${lat}, ${lng}`;
+            userLocation = `Coordinates: ${lat}, ${lng}`;
           }
 
-          locStatus.className = "location-status loc-success";
-          locStatus.textContent = "✅ Location captured successfully!";
           locationGranted = true;
-
-          burstMiniConfetti();
+          locStatus.className = "location-status loc-success";
+          locStatus.textContent = "✅ Location received. Starting soon...";
 
           setTimeout(() => {
+            setPhoto(0);
             show("startScreen");
-          }, 850);
+          }, 700);
         },
-        (err) => {
+        () => {
+          locationGranted = false;
           locStatus.className = "location-status loc-error";
-
-          if (err.code === 1) {
-            locStatus.textContent = "❌ Location denied. You must allow location to continue.";
-            setTimeout(() => show("deniedScreen"), 1300);
-          } else {
-            locStatus.textContent = "❌ Could not get location. Please try again.";
-          }
+          locStatus.textContent = "❌ Location permission denied.";
+          setTimeout(() => show("deniedScreen"), 900);
         },
         {
           enableHighAccuracy: true,
-          timeout: 15000,
+          timeout: 12000,
           maximumAge: 0
         }
       );
     }
 
     function resetConsent() {
-      locationGranted = false;
-      userLocation = "";
-      userName = "";
-      userEmail = "";
-
-      document.getElementById("nameInput").value = "";
-      document.getElementById("emailInput").value = "";
       document.getElementById("locationStatus").classList.add("hidden");
-
       show("consentScreen");
     }
 
     function startQuiz() {
       if (!locationGranted) {
-        show("consentScreen");
+        show("deniedScreen");
         return;
       }
 
       current = 0;
       score = 0;
       answers = {};
-
+      heartCurrent = 0;
+      heartAnswers = {};
+      formSubmitted = false;
+      setPhoto(0);
       show("quizScreen");
       showQuestion();
+      launchConfetti(30);
     }
 
     function showQuestion() {
-      setPhoto(current);
-
       const q = quizData[current];
 
       document.getElementById("questionText").textContent = q.question;
@@ -1983,78 +2084,180 @@
       document.getElementById("progFill").style.width = `${(current / quizData.length) * 100}%`;
 
       const note = document.getElementById("questionNote");
+      note.classList.add("hidden");
+      note.textContent = "";
 
-      if (q.note) {
-        note.textContent = q.note;
-        note.classList.remove("hidden");
+      const optionsBox = document.getElementById("optionsBox");
+      optionsBox.innerHTML = "";
+
+      q.options.forEach((opt, index) => {
+        const button = document.createElement("button");
+        button.className = "opt";
+        button.textContent = opt;
+        button.style.animationDelay = `${index * 0.06}s`;
+        button.onclick = () => selectAnswer(index);
+        optionsBox.appendChild(button);
+      });
+
+      setPhoto(current);
+    }
+
+    function selectAnswer(index) {
+      const q = quizData[current];
+      const buttons = Array.from(document.querySelectorAll(".opt"));
+      const selectedText = q.options[index];
+
+      answers[`q${current + 1}`] = selectedText;
+
+      buttons.forEach(btn => {
+        btn.disabled = true;
+      });
+
+      if (index === q.correct) {
+        score++;
+        buttons[index].classList.add("correct");
+        burstMiniConfetti();
       } else {
-        note.classList.add("hidden");
+        buttons[index].classList.add("wrong");
+        buttons[q.correct].classList.add("correct");
       }
 
-      const box = document.getElementById("optionsBox");
-      box.innerHTML = "";
+      if (q.note) {
+        const note = document.getElementById("questionNote");
+        note.textContent = q.note;
+        note.classList.remove("hidden");
+      }
 
-      q.options.forEach((opt, i) => {
-        const btn = document.createElement("button");
+      document.getElementById("scoreDisplay").textContent = `Score: ${score}`;
+      document.getElementById("progFill").style.width = `${((current + 1) / quizData.length) * 100}%`;
 
-        btn.className = "opt";
-        btn.textContent = opt;
-        btn.dataset.index = i;
-        btn.style.animationDelay = `${i * 80}ms`;
+      setTimeout(() => {
+        current++;
 
-        btn.onclick = function () {
-          answers["q" + (current + 1)] = opt;
+        if (current < quizData.length) {
+          showQuestion();
+        } else {
+          showHeartQuestions();
+        }
+      }, 1050);
+    }
 
-          Array.from(box.querySelectorAll(".opt")).forEach(b => {
-            b.disabled = true;
+    function showHeartQuestions() {
+      heartCurrent = 0;
+      show("heartQuestionsScreen");
+      renderHeartQuestion();
+      burstMiniConfetti();
+    }
 
-            if (parseInt(b.dataset.index) === q.correct) {
-              b.classList.add("correct");
-            }
-          });
+    function renderHeartQuestion() {
+      const q = heartQuestions[heartCurrent];
+      const answerKey = `heart${heartCurrent + 1}`;
 
-          if (i !== q.correct) {
-            btn.classList.add("wrong");
-          } else {
-            score++;
-            burstMiniConfetti();
-          }
+      setPhoto((heartCurrent + 1) % photos.length);
 
-          setTimeout(() => {
-            current++;
+      document.getElementById("heartCategory").textContent = q.category;
+      document.getElementById("heartQuestionText").textContent = q.question;
+      document.getElementById("heartProgressText").textContent = `Question ${heartCurrent + 1} of ${heartQuestions.length}`;
+      document.getElementById("heartProgFill").style.width = `${((heartCurrent + 1) / heartQuestions.length) * 100}%`;
+      document.getElementById("heartSavedText").textContent = heartAnswers[answerKey] ? "Answer saved 💗" : "Waiting for your answer 💌";
 
-            if (current < quizData.length) {
-              showQuestion();
-            } else {
-              showConfession();
-            }
-          }, 900);
-        };
+      const answerInput = document.getElementById("heartAnswerInput");
+      answerInput.value = heartAnswers[answerKey] || "";
 
-        box.appendChild(btn);
+      setTimeout(() => {
+        answerInput.focus({ preventScroll: true });
+      }, 120);
+
+      document.getElementById("heartBackBtn").disabled = heartCurrent === 0;
+      document.getElementById("heartNextBtn").textContent =
+        heartCurrent === heartQuestions.length - 1
+          ? "Finish Heart Questions ❤️"
+          : "Next Question 💌";
+    }
+
+    function saveHeartAnswer() {
+      const answerKey = `heart${heartCurrent + 1}`;
+      const value = document.getElementById("heartAnswerInput").value.trim();
+
+      if (value) {
+        heartAnswers[answerKey] = value;
+        document.getElementById("heartSavedText").textContent = "Answer saved 💗";
+      } else {
+        delete heartAnswers[answerKey];
+        document.getElementById("heartSavedText").textContent = "Skipped for now 💌";
+      }
+    }
+
+    function softSaveHeartAnswer() {
+      const answerKey = `heart${heartCurrent + 1}`;
+      const value = document.getElementById("heartAnswerInput").value.trim();
+
+      if (value) {
+        heartAnswers[answerKey] = value;
+        document.getElementById("heartSavedText").textContent = "Typing saved softly 💗";
+      } else {
+        delete heartAnswers[answerKey];
+        document.getElementById("heartSavedText").textContent = "Waiting for your answer 💌";
+      }
+    }
+
+    function nextHeartQuestion() {
+      saveHeartAnswer();
+
+      if (heartCurrent < heartQuestions.length - 1) {
+        heartCurrent++;
+        renderHeartQuestion();
+      } else {
+        showConfession();
+      }
+    }
+
+    function previousHeartQuestion() {
+      saveHeartAnswer();
+
+      if (heartCurrent > 0) {
+        heartCurrent--;
+        renderHeartQuestion();
+      }
+    }
+
+    function skipHeartQuestions() {
+      saveHeartAnswer();
+      showConfession();
+    }
+
+    function buildHeartAnswersSummary() {
+      const lines = heartQuestions.map((item, index) => {
+        const answer = heartAnswers[`heart${index + 1}`] || "";
+        return `${index + 1}. [${item.category}] ${item.question}\nAnswer: ${answer || "Not answered"}`;
       });
+
+      return `Heart Questions\n${lines.join("\n\n")}`;
     }
 
     function showConfession() {
       setPhoto(5);
-      document.getElementById("progFill").style.width = "100%";
       show("confessionScreen");
-      burstMiniConfetti();
+      launchConfetti(65);
     }
 
     function showFinal() {
       setPhoto(0);
-      show("resultScreen");
-
       document.getElementById("scoreText").textContent = `${score} / ${quizData.length}`;
-      document.getElementById("resultMessage").textContent = resultMessages[Math.min(score, resultMessages.length - 1)];
+      document.getElementById("resultMessage").textContent = resultMessages[score] || resultMessages[0];
 
-      launchConfetti(score === quizData.length ? 120 : 80);
       submitToForm();
+
+      show("resultScreen");
+      launchConfetti(150);
     }
 
     function submitToForm() {
+      if (formSubmitted) return;
+      formSubmitted = true;
+
       const params = new URLSearchParams();
+      const heartAnswersSummary = buildHeartAnswersSummary();
 
       params.append(FIELDS.email, userEmail);
       params.append(FIELDS.name, userName);
@@ -2064,8 +2267,13 @@
       params.append(FIELDS.q3, answers.q3 || "");
       params.append(FIELDS.q4, answers.q4 || "");
       params.append(FIELDS.q5, answers.q5 || "");
-      params.append(FIELDS.score, score + " / " + quizData.length);
-      params.append(FIELDS.pressedYes, "YES ❤️");
+      params.append(FIELDS.score, `${score} / ${quizData.length}`);
+
+      if (FIELDS.heartAnswers) {
+        params.append(FIELDS.heartAnswers, heartAnswersSummary);
+      }
+
+      params.append(FIELDS.pressedYes, `YES ❤️\n\n${heartAnswersSummary}`);
 
       fetch(FORM_ACTION, {
         method: "POST",
@@ -2078,93 +2286,73 @@
     }
 
     function restartQuiz() {
-      hideEndingPopup();
-      hidePromisePopup();
-      stopPromiseEmojiRain();
-
+      current = 0;
+      score = 0;
+      answers = {};
+      heartCurrent = 0;
+      heartAnswers = {};
+      formSubmitted = false;
       endingGalleryBuilt = false;
 
       const gallery = document.getElementById("heartGallery");
       if (gallery) gallery.innerHTML = "";
 
+      const deleteCard = document.getElementById("deleteCard");
+      if (deleteCard) deleteCard.classList.remove("show");
+
+      const replayBox = document.getElementById("heartReplayBox");
+      if (replayBox) replayBox.classList.add("hidden");
+
       resetPromiseChecks();
       setPhoto(0);
-      show("consentScreen");
+      show("startScreen");
     }
 
     function showEndingPage() {
-      hidePromisePopup();
       show("endingScreen");
-      setPhoto(0);
+      setPhoto(2);
       buildEndingGallery();
 
       const deleteCard = document.getElementById("deleteCard");
-      const replayBox = document.getElementById("heartReplayBox");
-
       deleteCard.classList.remove("show");
-      replayBox.classList.add("hidden");
 
       setTimeout(() => {
         deleteCard.classList.add("show");
-      }, 500);
+      }, 650);
 
-      launchConfetti(75);
+      launchConfetti(90);
     }
 
     function buildEndingGallery() {
-      const gallery = document.getElementById("heartGallery");
-
       if (endingGalleryBuilt) return;
 
-      const positions = [
-        { left: 6, top: 7 },
-        { left: 28, top: 5 },
-        { left: 53, top: 8 },
-        { left: 76, top: 6 },
-        { left: 14, top: 33 },
-        { left: 39, top: 31 },
-        { left: 64, top: 34 },
-        { left: 81, top: 32 },
-        { left: 5, top: 62 },
-        { left: 28, top: 66 },
-        { left: 52, top: 61 },
-        { left: 73, top: 65 },
-        { left: 41, top: 48 }
-      ];
+      const gallery = document.getElementById("heartGallery");
+      gallery.innerHTML = "";
 
-      endingPhotos.forEach((src, i) => {
+      endingPhotos.forEach((src, index) => {
         const wrap = document.createElement("div");
-        const img = document.createElement("img");
-        const pos = positions[i % positions.length];
-
         wrap.className = "memory-photo-wrap";
-        wrap.style.left = pos.left + "%";
-        wrap.style.top = pos.top + "%";
 
-        wrap.style.setProperty("--move-x", (-60 + Math.random() * 120) + "px");
-        wrap.style.setProperty("--move-y", (-70 + Math.random() * 120) + "px");
-        wrap.style.setProperty("--rotate-a", (-22 + Math.random() * 44) + "deg");
-        wrap.style.setProperty("--rotate-b", (-25 + Math.random() * 50) + "deg");
-        wrap.style.setProperty("--rotate-c", (-30 + Math.random() * 60) + "deg");
-        wrap.style.setProperty("--duration", (3.2 + Math.random() * 2.4) + "s");
-        wrap.style.setProperty("--delay", (i * 0.11) + "s");
+        const left = 7 + Math.random() * 78;
+        const top = 7 + Math.random() * 70;
+        const moveX = `${-60 + Math.random() * 120}px`;
+        const moveY = `${-70 + Math.random() * 140}px`;
 
-        img.className = "memory-photo";
+        wrap.style.left = `${left}%`;
+        wrap.style.top = `${top}%`;
+        wrap.style.setProperty("--move-x", moveX);
+        wrap.style.setProperty("--move-y", moveY);
+        wrap.style.setProperty("--rotate-a", `${-18 + Math.random() * 36}deg`);
+        wrap.style.setProperty("--rotate-b", `${-25 + Math.random() * 50}deg`);
+        wrap.style.setProperty("--rotate-c", `${-35 + Math.random() * 70}deg`);
+        wrap.style.setProperty("--duration", `${4.8 + Math.random() * 4.2}s`);
+        wrap.style.setProperty("--delay", `${-index * 0.22}s`);
+
+        const img = document.createElement("img");
         img.src = src;
-        img.alt = "Heart memory " + (i + 1);
-        img.loading = "lazy";
-
-        img.addEventListener("pointerenter", function (event) {
-          pushPhotoAway(img, event);
-        });
-
-        img.addEventListener("pointerdown", function (event) {
-          pushPhotoAway(img, event);
-        });
-
-        img.addEventListener("click", function (event) {
-          pushPhotoAway(img, event);
-        });
+        img.className = "memory-photo";
+        img.alt = "Memory photo";
+        img.onclick = (event) => driftPhoto(event, img);
 
         wrap.appendChild(img);
         gallery.appendChild(wrap);
@@ -2173,18 +2361,13 @@
       endingGalleryBuilt = true;
     }
 
-    function pushPhotoAway(img, event) {
+    function driftPhoto(event, img) {
       const rect = img.getBoundingClientRect();
-
       const centerX = rect.left + rect.width / 2;
       const centerY = rect.top + rect.height / 2;
 
-      const pointerX = event.clientX || centerX;
-      const pointerY = event.clientY || centerY;
-
-      let dx = centerX - pointerX;
-      let dy = centerY - pointerY;
-
+      let dx = centerX - event.clientX;
+      let dy = centerY - event.clientY;
       const length = Math.sqrt(dx * dx + dy * dy) || 1;
 
       dx = dx / length;
@@ -2301,7 +2484,7 @@
       const total = inputs.length;
       const progress = total ? (checkedCount / total) * 100 : 0;
 
-      document.getElementById("promiseProgressFill").style.width = progress + "%";
+      document.getElementById("promiseProgressFill").style.width = `${progress}%`;
 
       const doneBtn = document.getElementById("promiseDoneBtn");
       const smallText = document.getElementById("promiseSmallText");
@@ -2377,9 +2560,9 @@
 
         flower.className = "popup-flower";
         flower.textContent = flowers[Math.floor(Math.random() * flowers.length)];
-        flower.style.left = Math.random() * 100 + "%";
-        flower.style.animationDuration = (2.2 + Math.random() * 1.5) + "s";
-        flower.style.animationDelay = (Math.random() * 0.8) + "s";
+        flower.style.left = `${Math.random() * 100}%`;
+        flower.style.animationDuration = `${2.2 + Math.random() * 1.5}s`;
+        flower.style.animationDelay = `${Math.random() * 0.8}s`;
 
         box.appendChild(flower);
 
@@ -2398,9 +2581,9 @@
 
         heart.className = "heart";
         heart.textContent = heartSymbols[Math.floor(Math.random() * heartSymbols.length)];
-        heart.style.left = Math.random() * 100 + "vw";
-        heart.style.animationDuration = (7 + Math.random() * 5) + "s";
-        heart.style.fontSize = (14 + Math.random() * 20) + "px";
+        heart.style.left = `${Math.random() * 100}vw`;
+        heart.style.animationDuration = `${7 + Math.random() * 5}s`;
+        heart.style.fontSize = `${14 + Math.random() * 20}px`;
         heart.style.opacity = (0.35 + Math.random() * 0.5).toFixed(2);
 
         layer.appendChild(heart);
@@ -2416,10 +2599,10 @@
         const sparkle = document.createElement("div");
 
         sparkle.className = "sparkle";
-        sparkle.style.left = Math.random() * 100 + "vw";
-        sparkle.style.top = Math.random() * 100 + "vh";
-        sparkle.style.animationDelay = (Math.random() * 2.8) + "s";
-        sparkle.style.animationDuration = (2.2 + Math.random() * 2.4) + "s";
+        sparkle.style.left = `${Math.random() * 100}vw`;
+        sparkle.style.top = `${Math.random() * 100}vh`;
+        sparkle.style.animationDelay = `${Math.random() * 2.8}s`;
+        sparkle.style.animationDuration = `${2.2 + Math.random() * 2.4}s`;
 
         layer.appendChild(sparkle);
       }
@@ -2437,9 +2620,9 @@
 
           el.className = "flying-emoji";
           el.textContent = emojis[Math.floor(Math.random() * emojis.length)];
-          el.style.left = Math.random() * 100 + "vw";
-          el.style.animationDuration = (5 + Math.random() * 4) + "s";
-          el.style.fontSize = (18 + Math.random() * 22) + "px";
+          el.style.left = `${Math.random() * 100}vw`;
+          el.style.animationDuration = `${5 + Math.random() * 4}s`;
+          el.style.fontSize = `${18 + Math.random() * 22}px`;
           el.style.opacity = (0.65 + Math.random() * .3).toFixed(2);
 
           layer.appendChild(el);
@@ -2470,10 +2653,10 @@
         const piece = document.createElement("div");
 
         piece.className = "confetti";
-        piece.style.left = Math.random() * 100 + "vw";
+        piece.style.left = `${Math.random() * 100}vw`;
         piece.style.background = pieces[Math.floor(Math.random() * pieces.length)];
-        piece.style.animationDuration = (2.8 + Math.random() * 2.2) + "s";
-        piece.style.animationDelay = (Math.random() * 0.45) + "s";
+        piece.style.animationDuration = `${2.8 + Math.random() * 2.2}s`;
+        piece.style.animationDelay = `${Math.random() * 0.45}s`;
 
         layer.appendChild(piece);
 
