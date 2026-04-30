@@ -1,83 +1,1140 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Vaniza Love Quiz ❤️</title>
-<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;600;800;900&display=swap" rel="stylesheet">
-<style>
-*{box-sizing:border-box}body{margin:0;min-height:100vh;font-family:Poppins,sans-serif;color:#3b102a;display:flex;align-items:center;justify-content:center;padding:14px;background:linear-gradient(135deg,#ffe1ef,#ff9ac7,#ef7cff,#ffd1bd);overflow-x:hidden}
-body:before{content:"";position:fixed;inset:0;background:radial-gradient(circle at 10% 10%,#fff8,transparent 25%),radial-gradient(circle at 90% 90%,#ff0f7b55,transparent 30%);pointer-events:none}
-.card{position:relative;z-index:2;width:100%;max-width:760px;background:#ffffffcc;border:1px solid #fff;border-radius:30px;overflow:hidden;box-shadow:0 30px 90px #8a145c55;backdrop-filter:blur(18px)}
-.banner{height:280px;position:relative;overflow:hidden}.banner img{width:100%;height:100%;object-fit:cover;filter:saturate(1.1);animation:zoom 8s infinite alternate}.badge{position:absolute;top:15px;right:15px;background:#fff9;padding:9px 14px;border-radius:30px;font-weight:900;color:#9f005d}
-@keyframes zoom{to{transform:scale(1.08)}}.content{padding:28px}.screen{animation:show .35s ease}.hidden{display:none!important}@keyframes show{from{opacity:0;transform:translateY(12px)}to{opacity:1}}
-h1{font-family:Pacifico,cursive;color:#9f005d;font-size:clamp(30px,6vw,42px);margin:0 0 12px}h2{color:#9f005d;font-size:clamp(21px,5vw,28px);line-height:1.45}p{color:#7c4b67;line-height:1.7}
-.cap,.chip,.tag{display:inline-block;background:#fff8;border:1px solid #ffc2d4;color:#9f005d;border-radius:30px;padding:7px 13px;font-size:12px;font-weight:900;margin:4px}
-input,textarea,button{font-family:Poppins,sans-serif}input,textarea{width:100%;border:2px solid #ff9bca;border-radius:18px;padding:14px;margin:8px 0;font-size:16px;outline:none;background:#ffffffe8}textarea{min-height:130px;resize:vertical}
-button{border:0;border-radius:40px;padding:14px 28px;font-size:16px;font-weight:900;cursor:pointer;margin:5px;background:linear-gradient(135deg,#ff0f7b,#c400ff,#7b2cff);color:#fff;box-shadow:0 12px 28px #ff0f7b44}button:hover{transform:translateY(-2px)}button:disabled{opacity:.55;cursor:not-allowed}.light{background:#fff;color:#9f005d;border:1px solid #ffc2d4}
-.box{background:#fff9;border:1px solid #ffd6e7;border-radius:24px;padding:18px;margin:15px 0;box-shadow:0 12px 32px #ff0f7b22}.opts{display:grid;gap:10px}.opt{text-align:left;background:#fff;color:#96105a;border:2px solid #ff9bca}.correct{background:#d8f7e4!important;color:#145c38!important}.wrong{background:#ffe0e8!important;color:#8c0f2d!important}
-.bar{height:12px;background:#fff;border:1px solid #ff9bca;border-radius:20px;overflow:hidden;margin-top:10px}.fill{height:100%;width:0;background:linear-gradient(90deg,#ff0f7b,#ffe39a,#c400ff);transition:.3s}
-.center{text-align:center}.big{font-size:60px}.yes{font-size:28px;padding:20px 65px;animation:pulse 1.5s infinite}@keyframes pulse{50%{transform:scale(1.05)}}
-.gallery{height:420px;position:relative;overflow:hidden;border-radius:25px;background:#fff8;margin:18px 0}.gallery:before{content:"❤️";position:absolute;inset:0;display:grid;place-items:center;font-size:140px;opacity:.08}.pic{position:absolute;width:90px;height:120px;object-fit:cover;border:4px solid #fff;border-radius:20px;box-shadow:0 15px 35px #9f005d55;animation:float 5s infinite ease-in-out;cursor:pointer}
-@keyframes float{50%{transform:translate(var(--x),var(--y)) rotate(18deg) scale(1.1)}}.heart,.conf{position:fixed;pointer-events:none;z-index:1}.heart{bottom:-30px;animation:rise 8s linear forwards}.conf{top:-20px;width:10px;height:16px;animation:fall 3s linear forwards}@keyframes rise{to{transform:translateY(-110vh);opacity:0}}@keyframes fall{to{transform:translateY(110vh) rotate(720deg);opacity:0}}
-@media(max-width:650px){body{align-items:flex-start;padding:8px}.banner{height:220px}.content{padding:20px 13px}button{width:100%;margin:6px 0}.gallery{height:370px}.pic{width:65px;height:88px}}
-</style></head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Vaniza Love Quiz ❤️</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;600;800;900&display=swap" rel="stylesheet" />
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Poppins, sans-serif;
+      color: #3b102a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px;
+      background: linear-gradient(135deg, #ffe1ef, #ff9ac7, #ef7cff, #ffd1bd);
+      overflow-x: hidden;
+    }
+
+    body:before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(circle at 10% 10%, #fff8, transparent 25%),
+        radial-gradient(circle at 90% 90%, #ff0f7b55, transparent 30%);
+      pointer-events: none;
+    }
+
+    .card {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      max-width: 760px;
+      background: #ffffffcc;
+      border: 1px solid #fff;
+      border-radius: 30px;
+      overflow: hidden;
+      box-shadow: 0 30px 90px #8a145c55;
+      backdrop-filter: blur(18px);
+    }
+
+    .banner {
+      height: 280px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .banner img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: saturate(1.1);
+      animation: zoom 8s infinite alternate;
+    }
+
+    .badge {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background: #fff9;
+      padding: 9px 14px;
+      border-radius: 30px;
+      font-weight: 900;
+      color: #9f005d;
+      z-index: 3;
+    }
+
+    @keyframes zoom {
+      to {
+        transform: scale(1.08);
+      }
+    }
+
+    .content {
+      padding: 28px;
+    }
+
+    .screen {
+      animation: show 0.35s ease;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    @keyframes show {
+      from {
+        opacity: 0;
+        transform: translateY(12px);
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    h1 {
+      font-family: Pacifico, cursive;
+      color: #9f005d;
+      font-size: clamp(30px, 6vw, 42px);
+      margin: 0 0 12px;
+    }
+
+    h2 {
+      color: #9f005d;
+      font-size: clamp(21px, 5vw, 28px);
+      line-height: 1.45;
+    }
+
+    p {
+      color: #7c4b67;
+      line-height: 1.7;
+    }
+
+    .cap,
+    .chip,
+    .tag {
+      display: inline-block;
+      background: #fff8;
+      border: 1px solid #ffc2d4;
+      color: #9f005d;
+      border-radius: 30px;
+      padding: 7px 13px;
+      font-size: 12px;
+      font-weight: 900;
+      margin: 4px;
+    }
+
+    input,
+    textarea,
+    button {
+      font-family: Poppins, sans-serif;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      border: 2px solid #ff9bca;
+      border-radius: 18px;
+      padding: 14px;
+      margin: 8px 0;
+      font-size: 16px;
+      outline: none;
+      background: #ffffffe8;
+    }
+
+    textarea {
+      min-height: 130px;
+      resize: vertical;
+    }
+
+    button {
+      border: 0;
+      border-radius: 40px;
+      padding: 14px 28px;
+      font-size: 16px;
+      font-weight: 900;
+      cursor: pointer;
+      margin: 5px;
+      background: linear-gradient(135deg, #ff0f7b, #c400ff, #7b2cff);
+      color: #fff;
+      box-shadow: 0 12px 28px #ff0f7b44;
+      transition: 0.25s ease;
+    }
+
+    button:hover {
+      transform: translateY(-2px);
+    }
+
+    button:disabled {
+      opacity: 0.55;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .light {
+      background: #fff;
+      color: #9f005d;
+      border: 1px solid #ffc2d4;
+    }
+
+    .box {
+      background: #fff9;
+      border: 1px solid #ffd6e7;
+      border-radius: 24px;
+      padding: 18px;
+      margin: 15px 0;
+      box-shadow: 0 12px 32px #ff0f7b22;
+    }
+
+    .opts {
+      display: grid;
+      gap: 10px;
+    }
+
+    .opt {
+      text-align: left;
+      background: #fff;
+      color: #96105a;
+      border: 2px solid #ff9bca;
+    }
+
+    .correct {
+      background: #d8f7e4 !important;
+      color: #145c38 !important;
+    }
+
+    .wrong {
+      background: #ffe0e8 !important;
+      color: #8c0f2d !important;
+    }
+
+    .bar {
+      height: 12px;
+      background: #fff;
+      border: 1px solid #ff9bca;
+      border-radius: 20px;
+      overflow: hidden;
+      margin-top: 10px;
+    }
+
+    .fill {
+      height: 100%;
+      width: 0;
+      background: linear-gradient(90deg, #ff0f7b, #ffe39a, #c400ff);
+      transition: 0.35s ease;
+    }
+
+    .center {
+      text-align: center;
+    }
+
+    .big {
+      font-size: 60px;
+    }
+
+    .yes {
+      font-size: 28px;
+      padding: 20px 65px;
+      animation: pulse 1.5s infinite;
+    }
+
+    @keyframes pulse {
+      50% {
+        transform: scale(1.05);
+      }
+    }
+
+    .gallery {
+      height: 420px;
+      position: relative;
+      overflow: hidden;
+      border-radius: 25px;
+      background: #fff8;
+      margin: 18px 0;
+    }
+
+    .gallery:before {
+      content: "❤️";
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      font-size: 140px;
+      opacity: 0.08;
+    }
+
+    .pic {
+      position: absolute;
+      width: 90px;
+      height: 120px;
+      object-fit: cover;
+      border: 4px solid #fff;
+      border-radius: 20px;
+      box-shadow: 0 15px 35px #9f005d55;
+      animation: float 5s infinite ease-in-out;
+      cursor: pointer;
+    }
+
+    @keyframes float {
+      50% {
+        transform: translate(var(--x), var(--y)) rotate(18deg) scale(1.1);
+      }
+    }
+
+    .heart,
+    .conf {
+      position: fixed;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .heart {
+      bottom: -30px;
+      animation: rise 8s linear forwards;
+    }
+
+    .conf {
+      top: -20px;
+      width: 10px;
+      height: 16px;
+      animation: fall 3s linear forwards;
+    }
+
+    @keyframes rise {
+      to {
+        transform: translateY(-110vh);
+        opacity: 0;
+      }
+    }
+
+    @keyframes fall {
+      to {
+        transform: translateY(110vh) rotate(720deg);
+        opacity: 0;
+      }
+    }
+
+    /* Attractive animated promise section */
+    .promise-card {
+      background: linear-gradient(180deg, #fff8fd, #fff1f8);
+      border: 1px solid #ffcbe3;
+      border-radius: 30px;
+      padding: 24px;
+      box-shadow: 0 18px 50px #ff0f7b26;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .promise-card:before {
+      content: "";
+      position: absolute;
+      width: 240px;
+      height: 240px;
+      background: radial-gradient(circle, #ff0f7b22, transparent 70%);
+      top: -100px;
+      right: -90px;
+      pointer-events: none;
+    }
+
+    .promise-title {
+      font-size: clamp(44px, 8vw, 68px);
+      margin-bottom: 16px;
+    }
+
+    .promise-lines {
+      font-size: clamp(28px, 6vw, 42px);
+      font-weight: 900;
+      line-height: 1.45;
+      color: #a80065;
+      margin: 10px 0 22px;
+    }
+
+    .promise-list {
+      display: grid;
+      gap: 14px;
+      margin: 22px 0;
+    }
+
+    .promise-item {
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      width: 100%;
+      padding: 15px 16px;
+      border-radius: 22px;
+      background: #ffffffcc;
+      border: 2px solid #ffd2e5;
+      box-shadow: 0 10px 25px #ff0f7b14;
+      cursor: pointer;
+      transition: 0.28s ease;
+      text-align: left;
+      overflow: hidden;
+    }
+
+    .promise-item:hover {
+      transform: translateY(-3px);
+      border-color: #ff5faf;
+      box-shadow: 0 15px 30px #ff0f7b22;
+    }
+
+    .promise-item input {
+      display: none;
+    }
+
+    .custom-check {
+      min-width: 36px;
+      width: 36px;
+      height: 36px;
+      border-radius: 12px;
+      border: 2px solid #ff88bf;
+      display: grid;
+      place-items: center;
+      background: #fff;
+      color: transparent;
+      font-size: 19px;
+      font-weight: 900;
+      transition: 0.28s ease;
+      box-shadow: inset 0 0 0 4px #fff;
+    }
+
+    .promise-text {
+      flex: 1;
+      color: #5a183f;
+      font-size: 17px;
+      font-weight: 800;
+    }
+
+    .promise-emoji {
+      font-size: 24px;
+      transition: 0.28s ease;
+      opacity: 0.65;
+    }
+
+    .promise-item input:checked + .custom-check {
+      background: linear-gradient(135deg, #ff0f7b, #c400ff);
+      color: #fff;
+      border-color: #fff;
+      transform: rotate(8deg) scale(1.08);
+      animation: checkPop 0.45s ease;
+    }
+
+    .promise-item:has(input:checked) {
+      background: linear-gradient(135deg, #fff, #ffe4f2);
+      border-color: #ff41a0;
+      box-shadow: 0 16px 36px #ff0f7b2b;
+    }
+
+    .promise-item:has(input:checked) .promise-text {
+      color: #9f005d;
+    }
+
+    .promise-item:has(input:checked) .promise-emoji {
+      opacity: 1;
+      transform: scale(1.18) rotate(8deg);
+    }
+
+    @keyframes checkPop {
+      0% {
+        transform: scale(0.6) rotate(-20deg);
+      }
+      70% {
+        transform: scale(1.2) rotate(12deg);
+      }
+      100% {
+        transform: scale(1.08) rotate(8deg);
+      }
+    }
+
+    .promise-status {
+      color: #8c4770;
+      font-size: 18px;
+      font-weight: 700;
+      margin-top: 18px;
+    }
+
+    .promise-actions {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 15px;
+    }
+
+    @media (max-width: 650px) {
+      body {
+        align-items: flex-start;
+        padding: 8px;
+      }
+
+      .banner {
+        height: 220px;
+      }
+
+      .content {
+        padding: 20px 13px;
+      }
+
+      button {
+        width: 100%;
+        margin: 6px 0;
+      }
+
+      .gallery {
+        height: 370px;
+      }
+
+      .pic {
+        width: 65px;
+        height: 88px;
+      }
+
+      .promise-card {
+        padding: 18px 13px;
+      }
+
+      .promise-item {
+        padding: 13px;
+      }
+
+      .promise-text {
+        font-size: 15px;
+      }
+    }
+  </style>
+</head>
+
 <body>
-<div class="card"><div class="banner"><span class="badge">Made with love ✨</span><img id="photo" src="https://i.ibb.co/s9Bgh2T7/vaniza-main-jpg.webp"></div><div class="content">
+  <div class="card">
+    <div class="banner">
+      <span class="badge">Made with love ✨</span>
+      <img id="photo" src="https://i.ibb.co/s9Bgh2T7/vaniza-main-jpg.webp" />
+    </div>
 
-<section id="consent" class="screen">
-<span class="cap">💌 Special private quiz</span><h1>Before We Start ❤️</h1>
-<p>This quiz was made just for you, Vaniza. To continue, enter your details and allow location.</p>
-<div class="box"><p>📧 Email — to keep it personal<br>👤 Name — so I know it's really you<br>📍 Location — only after browser permission</p></div>
-<input id="email" type="email" placeholder="Enter your email 📧"><input id="name" placeholder="Enter name 👤">
-<p id="loc" class="box hidden">📍 Getting location...</p><button onclick="access()">✅ Allow & Continue</button>
-</section>
+    <div class="content">
 
-<section id="denied" class="screen hidden center"><div class="big">🚫</div><h2>Access Denied</h2><p>You need to fill everything and allow location.</p><button onclick="show('consent')">Try Again</button></section>
+      <section id="consent" class="screen">
+        <span class="cap">💌 Special private quiz</span>
+        <h1>Before We Start ❤️</h1>
+        <p>This quiz was made just for you, Vaniza. To continue, enter your details and allow location.</p>
 
-<section id="start" class="screen hidden"><span class="cap">💕 5 quiz + 19 heart questions</span><h1>For My Crazy Filipina ❤️</h1>
-<p>Vaniza, this little love quiz is made just for you.<br>From Pakistan to the Philippines — you are always on my mind.</p><button onclick="startQuiz()">Start the Love Quiz ❤️</button></section>
+        <div class="box">
+          <p>
+            📧 Email — to keep it personal<br />
+            👤 Name — so I know it's really you<br />
+            📍 Location — only after browser permission
+          </p>
+        </div>
 
-<section id="quiz" class="screen hidden"><span class="cap">✨ Love meter</span><h2 id="q"></h2><div id="opts" class="opts"></div><p id="note" class="box hidden"></p><p><b id="qp"></b> <span id="score"></span></p><div class="bar"><div id="qfill" class="fill"></div></div></section>
+        <input id="email" type="email" placeholder="Enter your email 📧" />
+        <input id="name" placeholder="Enter name 👤" />
 
-<section id="heartQs" class="screen hidden"><span class="cap">🥺 Answer from your heart</span><h1>Now Your Heart Has To Answer ❤️</h1>
-<p>These are not scored. I just want your real soft answers.</p><div class="box"><span id="cat" class="chip"></span><h2 id="hq"></h2><textarea id="ha" placeholder="Type your honest answer here, my love... 💌" oninput="saveHeart()"></textarea><button class="light" id="back" onclick="prevHeart()">Back</button><button id="next" onclick="nextHeart()">Next Question 💌</button><button class="light" onclick="confession()">Skip to confession 😏</button></div><p><b id="hp"></b> <span id="saved">Waiting 💌</span></p><div class="bar"><div id="hfill" class="fill"></div></div></section>
+        <p id="loc" class="box hidden">📍 Getting location...</p>
+        <button onclick="access()">✅ Allow & Continue</button>
+      </section>
 
-<section id="confess" class="screen hidden center"><h1>So what now...</h1><p style="font-size:22px;font-weight:900;color:#9f005d">You looked at all of this.<br>You did the whole quiz.<br>You love me right? 😏</p><button class="yes" onclick="final()">YES ❤️</button></section>
+      <section id="denied" class="screen hidden center">
+        <div class="big">🚫</div>
+        <h2>Access Denied</h2>
+        <p>You need to fill everything and allow location.</p>
+        <button onclick="show('consent')">Try Again</button>
+      </section>
 
-<section id="result" class="screen hidden center"><div class="big">💝</div><h1>I Love You, Vaniza ❤️</h1><h2 id="finalScore"></h2><p id="msg"></p><div><span class="tag">Pakistan 🇵🇰</span><span class="tag">Philippines 🇵🇭</span><span class="tag">Long Distance ✈️</span><span class="tag">Forever ♥</span></div><button onclick="heartPage()">Continue to My Heart 💘</button><button class="light" onclick="restart()">Play Again ↺</button></section>
+      <section id="start" class="screen hidden">
+        <span class="cap">💕 5 quiz + 19 heart questions</span>
+        <h1>For My Crazy Filipina ❤️</h1>
+        <p>
+          Vaniza, this little love quiz is made just for you.<br />
+          From Pakistan to the Philippines — you are always on my mind.
+        </p>
+        <button onclick="startQuiz()">Start the Love Quiz ❤️</button>
+      </section>
 
-<section id="heart" class="screen hidden center"><span class="cap">💘 My heart gallery</span><h1>Inside My Heart...</h1><p>These pictures are flying everywhere because they live inside my heart forever ❤️</p><div id="gallery" class="gallery"></div><div class="box"><h2>Do you want to delete these Pictures from My Heart?</h2><button onclick="pop('You don\\'t love me then...<br>But you can\\'t delete them.<br>They are permanently saved in my Heart ❤️')">YES</button><button class="light" onclick="pop('I knew you love me ❤️')">NO</button></div><div class="box"><p><b>Before we finish, one little promise from us ❤️</b></p><button onclick="promise()">Go to Our Promise 💍</button></div></section>
+      <section id="quiz" class="screen hidden">
+        <span class="cap">✨ Love meter</span>
+        <h2 id="q"></h2>
+        <div id="opts" class="opts"></div>
+        <p id="note" class="box hidden"></p>
+        <p><b id="qp"></b> <span id="score"></span></p>
+        <div class="bar"><div id="qfill" class="fill"></div></div>
+      </section>
 
-<section id="promise" class="screen hidden center"><span class="cap">💍 Our forever promise</span><div class="box"><h1>Our Promise</h1><h2>We talk 💬<br>We fix 🫶<br>We stay ❤️</h2>
-<label><input type="checkbox" onchange="promiseCheck()"> We talk honestly</label><br><br><label><input type="checkbox" onchange="promiseCheck()"> We fix things together</label><br><br><label><input type="checkbox" onchange="promiseCheck()"> We stay loyal and patient</label>
-<div class="bar"><div id="pfill" class="fill"></div></div><p id="pt">Tick all promises to unlock ✨</p><button id="done" disabled onclick="pop('We’re gonna make it together ❤️<br>We talk. We fix. We stay.')">Complete Our Promise 🔒</button><button class="light" onclick="heartPage()">Back 💘</button></div></section>
+      <section id="heartQs" class="screen hidden">
+        <span class="cap">🥺 Answer from your heart</span>
+        <h1>Now Your Heart Has To Answer ❤️</h1>
+        <p>These are not scored. I just want your real soft answers.</p>
 
-</div></div>
+        <div class="box">
+          <span id="cat" class="chip"></span>
+          <h2 id="hq"></h2>
+          <textarea id="ha" placeholder="Type your honest answer here, my love... 💌" oninput="saveHeart()"></textarea>
 
-<script>
-const FORM="https://docs.google.com/forms/d/e/1FAIpQLSdjxVqPa96w6yynxn5ZkZP3jlRtH47bPEhZKZ2EIWzejAEm8A/formResponse",
-F={a:["entry.388839782","entry.283423256","entry.1977006129","entry.1485672265","entry.291619209","entry.1293008312","entry.1330924171","entry.346226601","entry.619610067","entry.804417101","entry.801710637","entry.787100696","entry.150694720","entry.935058053","entry.1824232362","entry.1187318476","entry.579319652","entry.1080164085","entry.1050938075","entry.587976211","entry.870705579","entry.683299557","entry.737691122","entry.2086210372"],name:"entry.1463855130",email:"entry.2042978010",loc:"entry.435732199"},
-P=["https://i.ibb.co/s9Bgh2T7/vaniza-main-jpg.webp","https://i.ibb.co/BKN4XxST/vaniza-side1-jpg.jpg","https://i.ibb.co/v6qHhS5j/vaniza-side2-jpg.jpg","https://i.ibb.co/Vc8NL6sH/vaniza-side3-jpg.jpg","https://i.ibb.co/RkghqcrT/vaniza-side4-jpg.webp","https://i.ibb.co/SXJFYr91/vaniza-side5-jpg.webp"],
-GP=["https://i.ibb.co/HL4Wv5zs/vanizaaaaa-1612440540-2501655032169337224-38348874052.jpg","https://i.ibb.co/Kpvkp9Ys/vanizaaaaa-1617106095-2540792540996026923-38348874052.jpg","https://i.ibb.co/TMdTc2nc/vanizaaaaa-1624267790-2600869192949783693-38348874052.jpg","https://i.ibb.co/LdCYm8Vp/vanizaaaaa-1642852270-2756767108418148686-38348874052.webp","https://i.ibb.co/QFrVG74S/vanizaaaaa-1647147393-2792797214285354290-38348874052.webp","https://i.ibb.co/G4FjwB1H/vanizaaaaa-1649763896-2814746031504006019-38348874052.webp","https://i.ibb.co/yFknGnNj/vanizaaaaa-1652884030-2840919615381206377-38348874052.webp","https://i.ibb.co/d089fnC1/vanizaaaaa-1652884030-2840919615540716579-38348874052.webp","https://i.ibb.co/DDLt1N1R/vanizaaaaa-1653055563-2842358535440589858-38348874052.webp","https://i.ibb.co/tPPwTXgf/vanizaaaaa-1682084970-3085874850096113894-38348874052.webp","https://i.ibb.co/xSVG0dFX/vanizaaaaa-1721653962-3417803618484217050-38348874052.webp","https://i.ibb.co/wrBzFmTF/vanizaaaaa-1731765202-3502622845627373080-38348874052.webp","https://i.ibb.co/SXYJfYdQ/vanizaaaaa-1731765202-3502622845803453501-38348874052.webp"],
-Q=[["What sweet name do I lovingly call you?",["My Moon","Crazy Filipina","Princess","Biko Queen"],1],["Which one sounds most like you, my love?",["Pizza and tea","Burger and soda","Biko and coffee","Fries and juice"],2],["What is one thing you'd like to improve in our relationship?",["Better communication","More intimate conversations","More affection","More time to talk daily"],0],["If your family disliked me, would it change your feelings?",["Yes, a little","Not at all","Maybe, it depends","Family's opinion matters most"],1],["What first made you think, 'Oh wow, I really like him'?",["A smile","The humor","The confidence","Those eyes"],1,"If it was none of the above, text me your real answer ❤️"]],
-H=["Deep & Meaningful|What’s something about me you hope never changes?","Deep & Meaningful|What’s the first thing you always notice about me?","Deep & Meaningful|If your mom asked why you chose me, what would you say?","Deep & Meaningful|When do you feel most taken care of by me?","Love & Future|What’s something I do that makes love feel easy for you?","Love & Future|What tiny future thing are you secretly excited to do with me?","Love & Future|What about us would you never want to make ordinary?","Love & Future|When you picture us later in life, what’s always there?","Attraction & Butterflies|When did you first want me more than you admitted?","Attraction & Butterflies|What’s one thing I do that makes you blush immediately?","Attraction & Butterflies|When do I seem the most impossible to say no to?","Attraction & Butterflies|What’s a compliment from me you replay in your head?","Safety & Softness|What do I do that makes our relationship feel safe?","Safety & Softness|What about the way I care for you lingers the longest?","Safety & Softness|Which version of me makes you feel the softest?","Safety & Softness|What’s the cutest thing I do without realizing it?","Teasing & Filipino Habits|If you ever had to choose, who would you choose: me or dried fish?","Teasing & Filipino Habits|If I came to the Philippines, would you hug me first or feed me rice first?","Teasing & Filipino Habits|Be honest, do you love me more, or Jollibee Chickenjoy?"];
-let cur=0,sc=0,ans={},hc=0,ha={},mail="",nam="",locationText="",sent=false;
-const $=id=>document.getElementById(id),show=id=>["consent","denied","start","quiz","heartQs","confess","result","heart","promise"].forEach(s=>$(s).classList.toggle("hidden",s!=id)),photo=i=>$("photo").src=P[i%P.length];
+          <button class="light" id="back" onclick="prevHeart()">Back</button>
+          <button id="next" onclick="nextHeart()">Next Question 💌</button>
+          <button class="light" onclick="confession()">Skip to confession 😏</button>
+        </div>
 
-function access(){mail=$("email").value.trim();nam=$("name").value.trim();if(!mail.includes("@")||!nam)return alert("Fill name and valid email ❤️");$("loc").classList.remove("hidden");navigator.geolocation?navigator.geolocation.getCurrentPosition(p=>{let lat=p.coords.latitude.toFixed(6),lng=p.coords.longitude.toFixed(6);locationText=`Coordinates: ${lat}, ${lng}`;fetch(`https://nominatim.openstreetmap.org/reverse?lat=${lat}&lon=${lng}&format=json`).then(r=>r.json()).then(d=>locationText=(d.display_name||locationText)+` | ${lat}, ${lng}`).finally(()=>show("start"))},()=>show("denied")):alert("No geolocation support")}
-function startQuiz(){cur=sc=hc=0;ans={};ha={};sent=false;photo(0);show("quiz");renderQ();confetti(30)}
-function renderQ(){let x=Q[cur];$("q").textContent=x[0];$("qp").textContent=`Question ${cur+1} of ${Q.length}`;$("score").textContent=`Score: ${sc}`;$("qfill").style.width=cur/Q.length*100+"%";$("note").classList.add("hidden");$("opts").innerHTML=x[1].map((o,i)=>`<button class="opt" onclick="pick(${i})">${o}</button>`).join("");photo(cur)}
-function pick(i){let x=Q[cur],bs=[...document.querySelectorAll(".opt")];ans["q"+(cur+1)]=x[1][i];bs.forEach(b=>b.disabled=1);bs[i].classList.add(i==x[2]?"correct":"wrong");bs[x[2]].classList.add("correct");if(i==x[2])sc++;if(x[3]){$("note").textContent=x[3];$("note").classList.remove("hidden")}$("score").textContent=`Score: ${sc}`;$("qfill").style.width=(cur+1)/Q.length*100+"%";setTimeout(()=>++cur<Q.length?renderQ():heartQs(),900)}
-function heartQs(){hc=0;show("heartQs");renderH()}
-function renderH(){let [c,q]=H[hc].split("|");$("cat").textContent=c;$("hq").textContent=q;$("ha").value=ha[hc]||"";$("hp").textContent=`Question ${hc+1} of ${H.length}`;$("hfill").style.width=(hc+1)/H.length*100+"%";$("back").disabled=hc==0;$("next").textContent=hc==H.length-1?"Finish Heart Questions ❤️":"Next Question 💌";$("saved").textContent=ha[hc]?"Saved 💗":"Waiting 💌";photo(hc+1)}
-function saveHeart(){ha[hc]=$("ha").value.trim();$("saved").textContent=ha[hc]?"Saved 💗":"Waiting 💌"}
-function nextHeart(){saveHeart();hc<H.length-1?(hc++,renderH()):confession()}
-function prevHeart(){saveHeart();if(hc>0)hc--,renderH()}
-function confession(){show("confess");photo(5);confetti(60)}
-function final(){if(!sent)submit();$("finalScore").textContent=`${sc} / ${Q.length}`;$("msg").textContent=sc==5?"Perfect score, my love! From Pakistan to the Philippines, always yours ❤️":"No matter the score, you'll always be my Crazy Filipina ❤️";show("result");confetti(100)}
-function submit(){sent=true;let p=new URLSearchParams();p.append(F.email,mail);p.append(F.name,nam);p.append(F.loc,locationText);for(let i=0;i<5;i++)p.append(F.a[i],ans["q"+(i+1)]||"");for(let i=0;i<19;i++)p.append(F.a[i+5],ha[i]||"Not answered");fetch(FORM,{method:"POST",mode:"no-cors",headers:{"Content-Type":"application/x-www-form-urlencoded"},body:p.toString()}).catch(()=>{})}
-function heartPage(){show("heart");photo(2);$("gallery").innerHTML=GP.map(src=>`<img class="pic" src="${src}" style="left:${5+Math.random()*80}%;top:${5+Math.random()*70}%;--x:${-60+Math.random()*120}px;--y:${-60+Math.random()*120}px">`).join("");confetti(70)}
-function promise(){show("promise");photo(1);promiseCheck()}
-function promiseCheck(){let a=[...document.querySelectorAll("#promise input")],n=a.filter(x=>x.checked).length;$("pfill").style.width=n/3*100+"%";$("done").disabled=n<3;$("done").textContent=n==3?"Complete Our Promise ❤️":"Complete Our Promise 🔒";$("pt").textContent=n==3?"Promise unlocked 💐":`Tick ${3-n} more promise${3-n==1?"":"s"} ✨`}
-function pop(t){document.body.insertAdjacentHTML("beforeend",`<div id="pop" style="position:fixed;inset:0;background:#41002e77;z-index:9;display:grid;place-items:center;padding:16px" onclick="this.remove()"><div class="box center" style="max-width:420px;background:#fff"><div class="big">❤️</div><h2>${t}</h2><button>Okay ❤️</button></div></div>`);confetti(80)}
-function restart(){show("start");photo(0)}
-function confetti(n){for(let i=0;i<n;i++){let e=document.createElement("i");e.className="conf";e.style.left=Math.random()*100+"vw";e.style.background=["#ff0f7b","#c400ff","#7b2cff","#ffe39a","#fff"][i%5];document.body.append(e);setTimeout(()=>e.remove(),3500)}}
-setInterval(()=>{let h=document.createElement("b");h.className="heart";h.textContent=["❤️","💕","💖","💘"][Math.floor(Math.random()*4)];h.style.left=Math.random()*100+"vw";h.style.fontSize=14+Math.random()*20+"px";document.body.append(h);setTimeout(()=>h.remove(),8500)},900);
-</script></body></html>
+        <p><b id="hp"></b> <span id="saved">Waiting 💌</span></p>
+        <div class="bar"><div id="hfill" class="fill"></div></div>
+      </section>
+
+      <section id="confess" class="screen hidden center">
+        <h1>So what now...</h1>
+        <p style="font-size:22px;font-weight:900;color:#9f005d">
+          You looked at all of this.<br />
+          You did the whole quiz.<br />
+          You love me right? 😏
+        </p>
+        <button class="yes" onclick="final()">YES ❤️</button>
+      </section>
+
+      <section id="result" class="screen hidden center">
+        <div class="big">💝</div>
+        <h1>I Love You, Vaniza ❤️</h1>
+        <h2 id="finalScore"></h2>
+        <p id="msg"></p>
+
+        <div>
+          <span class="tag">Pakistan 🇵🇰</span>
+          <span class="tag">Philippines 🇵🇭</span>
+          <span class="tag">Long Distance ✈️</span>
+          <span class="tag">Forever ♥</span>
+        </div>
+
+        <button onclick="heartPage()">Continue to My Heart 💘</button>
+        <button class="light" onclick="restart()">Play Again ↺</button>
+      </section>
+
+      <section id="heart" class="screen hidden center">
+        <span class="cap">💘 My heart gallery</span>
+        <h1>Inside My Heart...</h1>
+        <p>These pictures are flying everywhere because they live inside my heart forever ❤️</p>
+
+        <div id="gallery" class="gallery"></div>
+
+        <div class="box">
+          <h2>Do you want to delete these Pictures from My Heart?</h2>
+          <button onclick="deleteAttempt()">YES</button>
+          <button class="light" onclick="keepPictures()">NO</button>
+        </div>
+
+        <div class="box">
+          <p><b>Before we finish, one little promise from us ❤️</b></p>
+          <button onclick="promise()">Go to Our Promise 💍</button>
+        </div>
+      </section>
+
+      <section id="promise" class="screen hidden center">
+        <span class="cap">💍 Our forever promise</span>
+
+        <div class="promise-card">
+          <h1 class="promise-title">Our Promise</h1>
+
+          <div class="promise-lines">
+            We talk 💬<br />
+            We fix 🫶<br />
+            We stay ❤️
+          </div>
+
+          <div class="promise-list">
+            <label class="promise-item">
+              <input type="checkbox" onchange="promiseCheck()" />
+              <span class="custom-check">✓</span>
+              <span class="promise-text">We talk honestly</span>
+              <span class="promise-emoji">💬</span>
+            </label>
+
+            <label class="promise-item">
+              <input type="checkbox" onchange="promiseCheck()" />
+              <span class="custom-check">✓</span>
+              <span class="promise-text">We fix things together</span>
+              <span class="promise-emoji">🫶</span>
+            </label>
+
+            <label class="promise-item">
+              <input type="checkbox" onchange="promiseCheck()" />
+              <span class="custom-check">✓</span>
+              <span class="promise-text">We stay loyal and patient</span>
+              <span class="promise-emoji">❤️</span>
+            </label>
+          </div>
+
+          <div class="bar"><div id="pfill" class="fill"></div></div>
+
+          <p id="pt" class="promise-status">Tick all promises to unlock ✨</p>
+
+          <div class="promise-actions">
+            <button id="done" disabled onclick="completePromise()">Complete Our Promise 🔒</button>
+            <button class="light" onclick="heartPage()">Back 💘</button>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </div>
+
+  <script>
+    const FORM = "https://docs.google.com/forms/d/e/1FAIpQLSdjxVqPa96w6yynxn5ZkZP3jlRtH47bPEhZKZ2EIWzejAEm8A/formResponse";
+
+    const F = {
+      a: [
+        "entry.388839782",
+        "entry.283423256",
+        "entry.1977006129",
+        "entry.1485672265",
+        "entry.291619209",
+        "entry.1293008312",
+        "entry.1330924171",
+        "entry.346226601",
+        "entry.619610067",
+        "entry.804417101",
+        "entry.801710637",
+        "entry.787100696",
+        "entry.150694720",
+        "entry.935058053",
+        "entry.1824232362",
+        "entry.1187318476",
+        "entry.579319652",
+        "entry.1080164085",
+        "entry.1050938075",
+        "entry.587976211",
+        "entry.870705579",
+        "entry.683299557",
+        "entry.737691122",
+        "entry.2086210372"
+      ],
+      name: "entry.1463855130",
+      email: "entry.2042978010",
+      loc: "entry.435732199"
+    };
+
+    const P = [
+      "https://i.ibb.co/s9Bgh2T7/vaniza-main-jpg.webp",
+      "https://i.ibb.co/BKN4XxST/vaniza-side1-jpg.jpg",
+      "https://i.ibb.co/v6qHhS5j/vaniza-side2-jpg.jpg",
+      "https://i.ibb.co/Vc8NL6sH/vaniza-side3-jpg.jpg",
+      "https://i.ibb.co/RkghqcrT/vaniza-side4-jpg.webp",
+      "https://i.ibb.co/SXJFYr91/vaniza-side5-jpg.webp"
+    ];
+
+    const GP = [
+      "https://i.ibb.co/HL4Wv5zs/vanizaaaaa-1612440540-2501655032169337224-38348874052.jpg",
+      "https://i.ibb.co/Kpvkp9Ys/vanizaaaaa-1617106095-2540792540996026923-38348874052.jpg",
+      "https://i.ibb.co/TMdTc2nc/vanizaaaaa-1624267790-2600869192949783693-38348874052.jpg",
+      "https://i.ibb.co/LdCYm8Vp/vanizaaaaa-1642852270-2756767108418148686-38348874052.webp",
+      "https://i.ibb.co/QFrVG74S/vanizaaaaa-1647147393-2792797214285354290-38348874052.webp",
+      "https://i.ibb.co/G4FjwB1H/vanizaaaaa-1649763896-2814746031504006019-38348874052.webp",
+      "https://i.ibb.co/yFknGnNj/vanizaaaaa-1652884030-2840919615381206377-38348874052.webp",
+      "https://i.ibb.co/d089fnC1/vanizaaaaa-1652884030-2840919615540716579-38348874052.webp",
+      "https://i.ibb.co/DDLt1N1R/vanizaaaaa-1653055563-2842358535440589858-38348874052.webp",
+      "https://i.ibb.co/tPPwTXgf/vanizaaaaa-1682084970-3085874850096113894-38348874052.webp",
+      "https://i.ibb.co/xSVG0dFX/vanizaaaaa-1721653962-3417803618484217050-38348874052.webp",
+      "https://i.ibb.co/wrBzFmTF/vanizaaaaa-1731765202-3502622845627373080-38348874052.webp",
+      "https://i.ibb.co/SXYJfYdQ/vanizaaaaa-1731765202-3502622845803453501-38348874052.webp"
+    ];
+
+    const Q = [
+      [
+        "What sweet name do I lovingly call you?",
+        ["My Moon", "Crazy Filipina", "Princess", "Biko Queen"],
+        1
+      ],
+      [
+        "Which one sounds most like you, my love?",
+        ["Pizza and tea", "Burger and soda", "Biko and coffee", "Fries and juice"],
+        2
+      ],
+      [
+        "What is one thing you'd like to improve in our relationship?",
+        ["Better communication", "More intimate conversations", "More affection", "More time to talk daily"],
+        0
+      ],
+      [
+        "If your family disliked me, would it change your feelings?",
+        ["Yes, a little", "Not at all", "Maybe, it depends", "Family's opinion matters most"],
+        1
+      ],
+      [
+        "What first made you think, 'Oh wow, I really like him'?",
+        ["A smile", "The humor", "The confidence", "Those eyes"],
+        1,
+        "If it was none of the above, text me your real answer ❤️"
+      ]
+    ];
+
+    const H = [
+      "Deep & Meaningful|What’s something about me you hope never changes?",
+      "Deep & Meaningful|What’s the first thing you always notice about me?",
+      "Deep & Meaningful|If your mom asked why you chose me, what would you say?",
+      "Deep & Meaningful|When do you feel most taken care of by me?",
+      "Love & Future|What’s something I do that makes love feel easy for you?",
+      "Love & Future|What tiny future thing are you secretly excited to do with me?",
+      "Love & Future|What about us would you never want to make ordinary?",
+      "Love & Future|When you picture us later in life, what’s always there?",
+      "Attraction & Butterflies|When did you first want me more than you admitted?",
+      "Attraction & Butterflies|What’s one thing I do that makes you blush immediately?",
+      "Attraction & Butterflies|When do I seem the most impossible to say no to?",
+      "Attraction & Butterflies|What’s a compliment from me you replay in your head?",
+      "Safety & Softness|What do I do that makes our relationship feel safe?",
+      "Safety & Softness|What about the way I care for you lingers the longest?",
+      "Safety & Softness|Which version of me makes you feel the softest?",
+      "Safety & Softness|What’s the cutest thing I do without realizing it?",
+      "Teasing & Filipino Habits|If you ever had to choose, who would you choose: me or dried fish?",
+      "Teasing & Filipino Habits|If I came to the Philippines, would you hug me first or feed me rice first?",
+      "Teasing & Filipino Habits|Be honest, do you love me more, or Jollibee Chickenjoy?"
+    ];
+
+    let cur = 0;
+    let sc = 0;
+    let ans = {};
+    let hc = 0;
+    let ha = {};
+    let mail = "";
+    let nam = "";
+    let locationText = "";
+    let sent = false;
+
+    const $ = id => document.getElementById(id);
+
+    const show = id => {
+      [
+        "consent",
+        "denied",
+        "start",
+        "quiz",
+        "heartQs",
+        "confess",
+        "result",
+        "heart",
+        "promise"
+      ].forEach(s => $(s).classList.toggle("hidden", s !== id));
+    };
+
+    const photo = i => {
+      $("photo").src = P[i % P.length];
+    };
+
+    function access() {
+      mail = $("email").value.trim();
+      nam = $("name").value.trim();
+
+      if (!mail.includes("@") || !nam) {
+        alert("Fill name and valid email ❤️");
+        return;
+      }
+
+      $("loc").classList.remove("hidden");
+
+      if (!navigator.geolocation) {
+        alert("No geolocation support");
+        return;
+      }
+
+      navigator.geolocation.getCurrentPosition(
+        p => {
+          let lat = p.coords.latitude.toFixed(6);
+          let lng = p.coords.longitude.toFixed(6);
+
+          locationText = `Coordinates: ${lat}, ${lng}`;
+
+          fetch(`https://nominatim.openstreetmap.org/reverse?lat=${lat}&lon=${lng}&format=json`)
+            .then(r => r.json())
+            .then(d => {
+              locationText = (d.display_name || locationText) + ` | ${lat}, ${lng}`;
+            })
+            .catch(() => {})
+            .finally(() => show("start"));
+        },
+        () => show("denied")
+      );
+    }
+
+    function startQuiz() {
+      cur = 0;
+      sc = 0;
+      hc = 0;
+      ans = {};
+      ha = {};
+      sent = false;
+
+      photo(0);
+      show("quiz");
+      renderQ();
+      confetti(30);
+    }
+
+    function renderQ() {
+      let x = Q[cur];
+
+      $("q").textContent = x[0];
+      $("qp").textContent = `Question ${cur + 1} of ${Q.length}`;
+      $("score").textContent = `Score: ${sc}`;
+      $("qfill").style.width = (cur / Q.length) * 100 + "%";
+      $("note").classList.add("hidden");
+
+      $("opts").innerHTML = x[1]
+        .map((o, i) => `<button class="opt" onclick="pick(${i})">${o}</button>`)
+        .join("");
+
+      photo(cur);
+    }
+
+    function pick(i) {
+      let x = Q[cur];
+      let bs = [...document.querySelectorAll(".opt")];
+
+      ans["q" + (cur + 1)] = x[1][i];
+
+      bs.forEach(b => b.disabled = true);
+      bs[i].classList.add(i === x[2] ? "correct" : "wrong");
+      bs[x[2]].classList.add("correct");
+
+      if (i === x[2]) sc++;
+
+      if (x[3]) {
+        $("note").textContent = x[3];
+        $("note").classList.remove("hidden");
+      }
+
+      $("score").textContent = `Score: ${sc}`;
+      $("qfill").style.width = ((cur + 1) / Q.length) * 100 + "%";
+
+      setTimeout(() => {
+        if (++cur < Q.length) {
+          renderQ();
+        } else {
+          heartQs();
+        }
+      }, 900);
+    }
+
+    function heartQs() {
+      hc = 0;
+      show("heartQs");
+      renderH();
+    }
+
+    function renderH() {
+      let [c, q] = H[hc].split("|");
+
+      $("cat").textContent = c;
+      $("hq").textContent = q;
+      $("ha").value = ha[hc] || "";
+      $("hp").textContent = `Question ${hc + 1} of ${H.length}`;
+      $("hfill").style.width = ((hc + 1) / H.length) * 100 + "%";
+      $("back").disabled = hc === 0;
+      $("next").textContent = hc === H.length - 1 ? "Finish Heart Questions ❤️" : "Next Question 💌";
+      $("saved").textContent = ha[hc] ? "Saved 💗" : "Waiting 💌";
+
+      photo(hc + 1);
+    }
+
+    function saveHeart() {
+      ha[hc] = $("ha").value.trim();
+      $("saved").textContent = ha[hc] ? "Saved 💗" : "Waiting 💌";
+    }
+
+    function nextHeart() {
+      saveHeart();
+
+      if (hc < H.length - 1) {
+        hc++;
+        renderH();
+      } else {
+        confession();
+      }
+    }
+
+    function prevHeart() {
+      saveHeart();
+
+      if (hc > 0) {
+        hc--;
+        renderH();
+      }
+    }
+
+    function confession() {
+      show("confess");
+      photo(5);
+      confetti(60);
+    }
+
+    function final() {
+      if (!sent) submit();
+
+      $("finalScore").textContent = `${sc} / ${Q.length}`;
+      $("msg").textContent =
+        sc === 5
+          ? "Perfect score, my love! From Pakistan to the Philippines, always yours ❤️"
+          : "No matter the score, you'll always be my Crazy Filipina ❤️";
+
+      show("result");
+      confetti(100);
+    }
+
+    function submit() {
+      sent = true;
+
+      let p = new URLSearchParams();
+
+      p.append(F.email, mail);
+      p.append(F.name, nam);
+      p.append(F.loc, locationText);
+
+      for (let i = 0; i < 5; i++) {
+        p.append(F.a[i], ans["q" + (i + 1)] || "");
+      }
+
+      for (let i = 0; i < 19; i++) {
+        p.append(F.a[i + 5], ha[i] || "Not answered");
+      }
+
+      fetch(FORM, {
+        method: "POST",
+        mode: "no-cors",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded"
+        },
+        body: p.toString()
+      }).catch(() => {});
+    }
+
+    function heartPage() {
+      show("heart");
+      photo(2);
+
+      $("gallery").innerHTML = GP.map(src => {
+        return `
+          <img
+            class="pic"
+            src="${src}"
+            style="
+              left:${5 + Math.random() * 80}%;
+              top:${5 + Math.random() * 70}%;
+              --x:${-60 + Math.random() * 120}px;
+              --y:${-60 + Math.random() * 120}px;
+            "
+          />
+        `;
+      }).join("");
+
+      confetti(70);
+    }
+
+    function deleteAttempt() {
+      pop(`
+        You don't love me then...<br>
+        But you can't delete them.<br>
+        They are permanently saved in my Heart ❤️
+      `);
+    }
+
+    function keepPictures() {
+      pop("I knew you love me ❤️");
+    }
+
+    function promise() {
+      show("promise");
+      photo(1);
+      promiseCheck();
+    }
+
+    function promiseCheck() {
+      let a = [...document.querySelectorAll("#promise input[type='checkbox']")];
+      let n = a.filter(x => x.checked).length;
+
+      $("pfill").style.width = (n / 3) * 100 + "%";
+      $("done").disabled = n < 3;
+      $("done").textContent = n === 3 ? "Complete Our Promise ❤️" : "Complete Our Promise 🔒";
+
+      $("pt").textContent =
+        n === 3
+          ? "Promise unlocked 💐"
+          : `Tick ${3 - n} more promise${3 - n === 1 ? "" : "s"} ✨`;
+
+      if (n === 3) {
+        confetti(35);
+      }
+    }
+
+    function completePromise() {
+      pop(`
+        We’re gonna make it together ❤️<br>
+        We talk. We fix. We stay.
+      `);
+    }
+
+    function pop(t) {
+      document.body.insertAdjacentHTML(
+        "beforeend",
+        `
+        <div
+          id="pop"
+          style="
+            position:fixed;
+            inset:0;
+            background:#41002e77;
+            z-index:9;
+            display:grid;
+            place-items:center;
+            padding:16px;
+          "
+          onclick="this.remove()"
+        >
+          <div class="box center" style="max-width:420px;background:#fff">
+            <div class="big">❤️</div>
+            <h2>${t}</h2>
+            <button>Okay ❤️</button>
+          </div>
+        </div>
+        `
+      );
+
+      confetti(80);
+    }
+
+    function restart() {
+      show("start");
+      photo(0);
+    }
+
+    function confetti(n) {
+      for (let i = 0; i < n; i++) {
+        let e = document.createElement("i");
+
+        e.className = "conf";
+        e.style.left = Math.random() * 100 + "vw";
+        e.style.background = ["#ff0f7b", "#c400ff", "#7b2cff", "#ffe39a", "#fff"][i % 5];
+
+        document.body.append(e);
+
+        setTimeout(() => e.remove(), 3500);
+      }
+    }
+
+    setInterval(() => {
+      let h = document.createElement("b");
+
+      h.className = "heart";
+      h.textContent = ["❤️", "💕", "💖", "💘"][Math.floor(Math.random() * 4)];
+      h.style.left = Math.random() * 100 + "vw";
+      h.style.fontSize = 14 + Math.random() * 20 + "px";
+
+      document.body.append(h);
+
+      setTimeout(() => h.remove(), 8500);
+    }, 900);
+  </script>
+</body>
+</html>
